@@ -4,13 +4,13 @@ import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class Expenses {
-	private int treatment, transport, tuitionFees, Electricity, gasBills, rent;
+	private int treatment, transport, schoolFees, Electricity, gasBills, rent;
 
-	public Expenses(int treatment, int transport, int tuitionFees, int electricity, int gasBills, int rent) {
+	public Expenses(int treatment, int transport, int schoolFees, int electricity, int gasBills, int rent) {
 		super();
 		this.treatment = treatment;
 		this.transport = transport;
-		this.tuitionFees = tuitionFees;
+		this.schoolFees = schoolFees;
 		Electricity = electricity;
 		this.gasBills = gasBills;
 		this.rent = rent;
@@ -36,12 +36,12 @@ public class Expenses {
 		this.transport = transport;
 	}
 
-	public int getTuitionFees() {
-		return tuitionFees;
+	public int getSchoolFees() {
+		return schoolFees;
 	}
 
-	public void setTuitionFees(int tuitionFees) {
-		this.tuitionFees = tuitionFees;
+	public void setSchoolFees(int schoolFees) {
+		this.schoolFees = schoolFees;
 	}
 
 	public int getElectricity() {

@@ -23,7 +23,7 @@ public class Case {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	private String caseName, caseId, address, maritalStatus;
+	private String caseName, caseId, address, status;
 	private int phone;
 	
 	@CollectionTable(name = "Relatives", joinColumns = @JoinColumn(name = "case_A_id"))
@@ -48,6 +48,7 @@ public class Case {
 	private Expenses expenses;
 	private HomeResearch homeResearch;
 	private Investment investment;
+	@ElementCollection
 	private List<String> researchers;
 	private String description;
 	private CommitteeEvaluation committeeEvaluation;
@@ -59,7 +60,7 @@ public class Case {
 		super();
 	}
 
-	public Case(Long id, String caseName, String caseId, String address, String maritalStatus, int phone,
+	public Case(Long id, String caseName, String caseId, String address, String status, int phone,
 			List<Relatives> relatives, List<SourceOfIncome> income, List<HealthStatus> healtstatus,
 			List<CriminalRecord> criminalRecord, MarriageCase marriageCase, Expenses expenses,
 			HomeResearch homeResearch, Investment investment, List<String> researchers, String description,
@@ -69,7 +70,7 @@ public class Case {
 		this.caseName = caseName;
 		this.caseId = caseId;
 		this.address = address;
-		this.maritalStatus = maritalStatus;
+		this.status = status;
 		this.phone = phone;
 		this.relatives = relatives;
 		this.income = income;
@@ -112,11 +113,11 @@ public class Case {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getMaritalStatus() {
-		return maritalStatus;
+	public String getStatus() {
+		return status;
 	}
-	public void setMaritalStatus(String maritalStatus) {
-		this.maritalStatus = maritalStatus;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	public int getPhone() {
 		return phone;

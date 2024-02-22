@@ -1,20 +1,20 @@
 package com.backend.AlAdil.Association.entity;
 
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import org.springframework.data.annotation.Id;
 
 @Embeddable
 public class Relatives {
-	
-	private Long id;
 	private String name, relation, academicYear, school, qualification, job, reasonForNotWorking;
 	
 	public Relatives() {
 		super();
 	}
-	public Relatives(Long id, String name, String relation, String academicYear, String school, String qualification,
+	public Relatives(String name, String relation, String academicYear, String school, String qualification,
 			String job, String reasonForNotWorking) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.relation = relation;
 		this.academicYear = academicYear;
@@ -22,12 +22,6 @@ public class Relatives {
 		this.qualification = qualification;
 		this.job = job;
 		this.reasonForNotWorking = reasonForNotWorking;
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
 	}
 	public String getName() {
 		return name;
