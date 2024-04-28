@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.backend.AlAdil.Association.dto.CaseDto;
 import com.backend.AlAdil.Association.entity.Case;
 import com.backend.AlAdil.Association.repository.CaseRepository;
 
