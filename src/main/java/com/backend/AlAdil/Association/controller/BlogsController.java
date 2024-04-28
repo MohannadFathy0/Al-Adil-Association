@@ -18,6 +18,7 @@ public class BlogsController {
     private BlogsRepository blogsRepository;
 
     // Get all blogs
+    @CrossOrigin
     @GetMapping
     public ResponseEntity<List<Blogs>> getAllBlogs() {
         List<Blogs> blogs = blogsRepository.findAll();
@@ -25,6 +26,7 @@ public class BlogsController {
     }
 
     // Get a blog by ID
+    @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<Blogs> getBlogById(@PathVariable Long id) {
         Optional<Blogs> optionalBlog = blogsRepository.findById(id);
@@ -32,6 +34,7 @@ public class BlogsController {
     }
 
     // Create a new blog
+    @CrossOrigin
     @PostMapping
     public ResponseEntity<Blogs> createBlog(@RequestBody Blogs blog) {
         Blogs createdBlog = blogsRepository.save(blog);
@@ -39,6 +42,7 @@ public class BlogsController {
     }
 
     // Update an existing blog
+    @CrossOrigin
     @PutMapping("/{id}")
     public ResponseEntity<Blogs> updateBlog(@PathVariable Long id, @RequestBody Blogs updatedBlog) {
         Optional<Blogs> optionalBlog = blogsRepository.findById(id);
@@ -59,6 +63,7 @@ public class BlogsController {
     }
 
     // Delete a blog by ID
+    @CrossOrigin
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBlog(@PathVariable Long id) {
         if (blogsRepository.existsById(id)) {
